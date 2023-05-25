@@ -1,0 +1,42 @@
+body {
+  background-color: black;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+main {
+  height: 700px;
+  width: 700px;
+  background-color: #F5F7FB;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Karla', sans-serif;
+  color: #293264;
+}
+
+.intro-title {
+  font-weight: bold;
+  font-size: 40px;
+  margin: 10px;
+}
+
+.intro-description {
+  font-size: 24px;
+  margin: 10px;
+}
+
+.intro-button {
+  height: 50px;
+  width: 190px;
+  border: none;
+  border-radius: 15px;
+  font-size: 16px;
+  color: #F5F7FB;
+  font-family: inherit;
+  background-color: #4D5B9E;
+  margin: 10px;
+}
