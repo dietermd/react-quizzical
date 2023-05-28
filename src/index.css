@@ -7,6 +7,7 @@ body {
 }
 
 main {
+  position: relative;
   height: 700px;
   width: 700px;
   background-color: #F5F7FB;
@@ -38,5 +39,18 @@ main {
   color: #F5F7FB;
   font-family: inherit;
   background-color: #4D5B9E;
+  cursor: pointer;
   margin: 10px;
+}
+
+.blob1 {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.blob2 {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
 }
