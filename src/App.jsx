@@ -2,6 +2,7 @@ import { useState } from "react"
 import blob1 from "./assets/blob_1.svg"
 import blob2 from "./assets/blob_2.svg"
 import Intro from "./components/intro"
+import Quiz from "./components/quiz"
 
 
 function App() {
@@ -14,8 +15,8 @@ function App() {
       <img src={blob2} className="blob2" alt="blob 2"/>
       {
         !gameStart ? 
-        <Intro /> :
-        <h1>Quizz</h1>
+        <Intro setGameStart={setGameStart} /> :
+        <Quiz />
       }
       
     </main>
