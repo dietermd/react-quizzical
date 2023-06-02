@@ -30,17 +30,26 @@ main {
   margin: 10px;
 }
 
-.intro-button {
-  height: 50px;
-  width: 190px;
+.button {
   border: none;
-  border-radius: 15px;
-  font-size: 16px;
+  border-radius: 15px;  
   color: #F5F7FB;
   font-family: inherit;
   background-color: #4D5B9E;
   cursor: pointer;
+}
+
+.intro-button {
+  height: 50px;
+  width: 190px;
+  font-size: 16px;
   margin: 10px;
+}
+
+.quiz-button {
+  height: 35px;
+  width: 120px;
+  font-size: 12px;
 }
 
 .blob1 {
@@ -53,4 +62,44 @@ main {
   position: absolute;
   bottom: 0px;
   left: 0px;
+}
+
+.quiz-section {
+  margin: 75px;
+}
+
+.quiz-question {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.quiz-awsers-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.quiz-awsers {
+  font-size: 12px;
+  border: 1px solid;
+  border-radius: 8px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.selected-awser {
+  background-color: #D6DBF5;
+  border: none;
+}
+
+.quiz-divisor {
+  margin: 16px 0;
+  border: 1px solid #DBDEF0;
+}
+
+.quiz-footer {
+  display: flex;
+  justify-content: center;
+  padding-top: 16px;
 }
