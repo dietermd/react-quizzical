@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
+import Question from "./question"
 
-export default function Quiz(){
+export default function Quiz() {
 
   const [quiz, setQuiz] = useState(null)
 
@@ -19,23 +20,29 @@ export default function Quiz(){
     })
   }, [])
 
-  
+  function selectAnswer(questionIndex, answerIndex) {    
+    setQuiz(prevQuiz => {
+      prevQuiz[questionIndex].selectedIndex = answerIndex
+      return [...prevQuiz]
+    })
+  }
+
   return (
     <div className="quiz-section">
       {
         quiz ?
         <>
           {
-            quiz.map((q, i) =>
-              <div key={`quiz-questions-${i}`}>
-                <div className="quiz-question">
-                  {q.question}
-                </div>
-                <div className="quiz-awsers-container">
-                  {q.answers.map((a, j) => <span key={`quiz-answer-${i}-${j}`} className={`quiz-awsers${q.selectedIndex === j && " selected-awser" || "" }`}>{a}</span>)}
-                </div>
-                <hr className="quiz-divisor" />
-              </div>          
+            quiz.map((q, i) => 
+              <Question
+                key={i}
+                question={q.question} 
+                answers={q.answers}
+                selectedIndex={q.selectedIndex}
+                questionIndex={i}
+                selectAnswer={selectAnswer}
+              />
+              
             )
           }
           <div className="quiz-footer">
