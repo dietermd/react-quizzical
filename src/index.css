@@ -74,13 +74,13 @@ main {
   margin-bottom: 16px;
 }
 
-.quiz-awsers-container {
+.quiz-answers-container {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
 }
 
-.quiz-awsers {
+.quiz-answers {
   font-size: 12px;
   border: 1px solid;
   border-radius: 8px;
@@ -88,8 +88,18 @@ main {
   cursor: pointer;
 }
 
-.selected-awser {
+.selected-answer {
   background-color: #D6DBF5;
+  border: none;
+}
+
+.selected-correct-answer {
+  background-color: #94D7A2;
+  border: none;
+}
+
+.selected-incorrect-answer {
+  background-color: #F8BCBC;
   border: none;
 }
 

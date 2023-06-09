@@ -4,6 +4,7 @@ import Question from "./question"
 export default function Quiz() {
 
   const [quiz, setQuiz] = useState(null)
+  const [endQuiz, setEndQuiz] = useState(false)
 
   useEffect(() => {
     fetch("https://opentdb.com/api.php?amount=5")
@@ -27,6 +28,10 @@ export default function Quiz() {
     })
   }
 
+  function checkAnswers() {
+    !endQuiz && setEndQuiz(true)
+  }
+
   return (
     <div className="quiz-section">
       {
@@ -36,17 +41,16 @@ export default function Quiz() {
             quiz.map((q, i) => 
               <Question
                 key={i}
-                question={q.question} 
-                answers={q.answers}
-                selectedIndex={q.selectedIndex}
+                question={q}
                 questionIndex={i}
                 selectAnswer={selectAnswer}
+                endQuiz={endQuiz}
               />
               
             )
           }
           <div className="quiz-footer">
-            <button className="button quiz-button">Check awsers</button>
+            <button className="button quiz-button" onClick={checkAnswers}>Check awsers</button>
           </div>
         </>        
         :
