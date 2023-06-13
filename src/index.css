@@ -110,6 +110,7 @@ main {
 
 .quiz-footer {
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
   padding-top: 16px;
 }

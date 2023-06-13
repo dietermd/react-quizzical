@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Question from "./question"
 
-export default function Quiz() {
+export default function Quiz(props) {
 
   const [quiz, setQuiz] = useState(null)
   const [endQuiz, setEndQuiz] = useState(false)
@@ -10,7 +10,6 @@ export default function Quiz() {
     fetch("https://opentdb.com/api.php?amount=5")
     .then(res => res.json())
     .then(data => {
-      console.log(data)
       const quizData = data.results.map(d => {
         const answers = d.incorrect_answers
         const correctAnswerIndex = Math.floor(Math.random() * (answers.length + 1))        
@@ -50,7 +49,15 @@ export default function Quiz() {
             )
           }
           <div className="quiz-footer">
-            <button className="button quiz-button" onClick={checkAnswers}>Check awsers</button>
+            {
+              endQuiz ?
+              <>
+                <h4>{`You scored ${quiz.filter(q => q.correctAnswerIndex === q.selectedIndex).length}/5 correct answers`}</h4>
+                <button className="button quiz-button" onClick={() => props.setGameStart(false)}>Play again</button>    
+              </>
+              :
+              <button className="button quiz-button" onClick={checkAnswers}>Check awsers</button>
+            }            
           </div>
         </>        
         :

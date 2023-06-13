@@ -23,7 +23,7 @@ function App() {
         <>
           <img src={blob1Small} className="blob1" alt="blob 1" />
           <img src={blob2Small} className="blob2" alt="blob 2" />
-          <Quiz />
+          <Quiz setGameStart={setGameStart}/>
         </>
         
       }
